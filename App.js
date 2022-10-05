@@ -15,23 +15,28 @@ function App() {
   }; 
  
   function minus(e) { 
-  	// Add the code for the minus function 
+  	e.preventDefault(); 
+    setResult((result) => result - Number(inputRef.current.value)); 
   };
  
   function times(e) { 
-    // Add the code for the plus function 
+    e.preventDefault(); 
+    setResult((result) => result * Number(inputRef.current.value)); 
   }; 
  
   function divide(e) { 
-    // Add the code for the divide function 
+    e.preventDefault(); 
+    setResult((result) => result / Number(inputRef.current.value)); 
   };
  
   function resetInput(e) { 
-    // Add the code for the resetInput function 
+    e.preventDefault(); 
+    setResult((result) => result === Number(inputRef.null)); 
   }; 
  
   function resetResult(e) { 
-  	// Add the code for the resetResult function 
+  	e.preventDefault(); 
+    setResult((result) => Number.current.value === null);
   }; 
  
   return ( 
@@ -41,7 +46,7 @@ function App() {
       </div> 
       <form> 
         <p ref={resultRef}> 
-          {/* add the value of the current total */} 
+          {<Screen value={calc.num ? calc.num : calc.res} />} 
         </p> 
         <input
           pattern="[0-9]" 
@@ -50,11 +55,11 @@ function App() {
           placeholder="Type a number" 
         /> 
         <button onClick={plus}>add</button> 
-        {/* Add the subtract button */} 
-        {/* Add the multiply button */} 
-        {/* Add the divide button */} 
-        {/* Add the resetInput button */} 
-        {/* Add the resetResult button */} 
+        {<button onClick={minus}>subtract</button>} 
+        {<button onClick={times}>multiply</button>} 
+        {<button onClick={divide}>divide</button>} 
+        {<button onClick={resetInput}>clear</button>}
+        {<button onClick={resetResult}>reset</button>} 
       </form> 
     </div> 
   ); 
