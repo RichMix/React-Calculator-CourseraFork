@@ -31,12 +31,12 @@ function App() {
  
   function resetInput(e) { 
     e.preventDefault(); 
-    setResult((result) => result === Number(inputRef.null)); 
+    inputRef.current.value = ""  
   }; 
  
   function resetResult(e) { 
-  	e.preventDefault(); 
-    setResult((result) => Number.current.value === null);
+  	 e.preventDefault(); 
+    setResult(null);  
   }; 
  
   return ( 
@@ -46,23 +46,25 @@ function App() {
       </div> 
       <form> 
         <p ref={resultRef}> 
-          {<Screen value={calc.num ? calc.num : calc.res} />} 
+          {result} 
         </p> 
         <input
           pattern="[0-9]" 
           ref={inputRef} 
           type="number" 
           placeholder="Type a number" 
-        /> 
-        <button onClick={plus}>add</button> 
-        {<button onClick={minus}>subtract</button>} 
-        {<button onClick={times}>multiply</button>} 
-        {<button onClick={divide}>divide</button>} 
-        {<button onClick={resetInput}>clear</button>}
-        {<button onClick={resetResult}>reset</button>} 
+        />
+        <div className="button-container">
+          <button onClick={plus}>Add</button> 
+          <button onClick={minus}>Minus</button> 
+          <button onClick={times}>Times</button> 
+          <button onClick={divide}>Divide</button> 
+          <button className={"button-orange"} onClick={resetInput}>Reset Input</button>
+          <button className={"button-orange"} onClick={resetResult}>Reset Result</button> 
+        </div>
       </form> 
     </div> 
   ); 
 } 
  
-export default App; 
+export default App;
