@@ -1,23 +1,26 @@
-* {
-    font-family: sans-serif;
-  }
-  input,
-  button {
-    font-size: 20px;
-    padding: 10px;
+body {
+    font-size: 16;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.button-container {
+    margin-top: 1em;
+}
+
+.button-container > button {
+    font-size: 1em;
+    margin-right: .2em;
+    border-width: .5px;
     border-radius: 5px;
-  }
-  input {
-    display: block;
-    margin-bottom: 20px;
-  }
-  button {
-    border: 1px solid gray;
-    background: whitesmoke;
-    margin-right: 5px;
-  }
-  button:nth-last-child(2),
-  button:nth-last-child(1) {
-    background: tomato;
-    color: white;
-  }
+    padding: .4em .5em;
+}
+
+.button-container > button.button-orange {
+    background-color: rgb(255, 94, 0);
+    color:white;
+}
+
+input {
+    padding: .4em .5em;
+    font-size: 1em;
+}
